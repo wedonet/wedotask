@@ -1,0 +1,96 @@
+body{
+	background:none;
+	font-size:14px;
+	
+	}
+
+.mainlogin{
+	width:600px;
+	margin:0 auto;
+	
+}
+.crumblogin {
+	height:100px;
+	
+	}
+.crumblogin .pos{
+	padding-left:0;
+	background:none;
+	}	
+.crumblogin .curmbindex{
+	padding-left:10px;
+	background:none;
+	}		
+.crumblogin li{
+	display:inline;
+	float:left;	
+	margin-top:40px;
+	padding:0 0 0 26px;
+	background:url(../_images/dot3.gif) no-repeat 10px;
+	
+}
+.loginblock {
+	padding:0 100px 40px;
+	border:1px solid #ddd;
+	}
+.loginblock .th{
+	font-size:14px;
+	height:60px;
+	line-height:60px;
+	font-weight:bold;
+	text-align:center;
+	}
+.loginblock .table{
+	width:100%;
+	}	
+.loginblock	td{
+	padding:7px 0;
+	}
+.loginblock	.label{
+
+	}
+
+table td{
+	text-align:left;
+}
+/*reg*/
+.reg {
+	padding:20px 0 0;
+	}
+.reg table td{
+	padding:8px 0 3px 0;
+	border-bottom:1px dashed #eee;
+	vertical-align:top;
+	}
+.reg .operate{
+	padding:20px 0;
+	}	
+/*agreement*/	
+.agreement{
+	margin:0 10px 10px;
+	padding:3px;
+	border:1px solid #eee;
+	overflow-y:scroll;
+	text-align:left;
+}
+		
+.reg div{
+	height:20px;
+	line-height:20px;
+	color:#f00;
+}
+
+cite{
+	padding-right:5px;
+	color:#f00;
+}	
+	
+.reg table td.label{
+	padding-right:5px;
+	text-align:right;
+}	
+
+/*选择用户类型*/
+.selectusertype{
+	margin-bottom:10px;
+}

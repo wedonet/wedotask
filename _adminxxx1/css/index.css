@@ -1,0 +1,58 @@
+/*管理中心和控制面版左侧管理导航*/
+body {height:100%;}
+
+.top {
+	margin:5px 2px 5px 2px;
+	font-weight:bold;
+	color:red;
+	text-align:center;
+}
+.userinfo {
+	margin:10px 5px 15px 5px;
+	padding:5px;
+	border:1px solid #828282;
+	background-color:#f7ffe7;
+}
+a, a:link { text-decoration:none; }
+h1 {
+	padding:5px 0 5px 15px;
+	background:url(../images/more.gif) no-repeat 2px 8px;
+	font-weight:bold;
+	font-size:12px;
+}
+.sidebar {
+	margin:0px 4px;
+	padding:5px 0;
+	border-top:1px solid #828282;
+	text-align:left;
+}
+.sidebar li {
+	padding-left:18px;
+	height:22px;
+	line-height:22px;
+	background:url(../images/dotad.gif) no-repeat 5px 7px;
+}
+/*管理中心,控制左侧h1显示链接效果*/
+.menuh1 { cursor:pointer; }
+.sidebar ul { display:none; }
+.div1, .div2, .div3, .div4{
+	background:url(../images/adminbg.gif) no-repeat;
+}
+.div1{
+	background-position:120px 3px;
+}
+.div2{
+	background-position:-130px 3px;
+}
+
+.div3{
+	background-position:-380px 3px;;
+}
+
+.div4{
+	background-position:-630px 3px;;
+}
+
+
+
+
