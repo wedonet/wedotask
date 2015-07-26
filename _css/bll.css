@@ -1,0 +1,35 @@
+/*控制显示隐藏的Css*/
+
+/*客户的操作*/
+/*新订单可以编辑*/
+#hotel_member_order .j_order_edit_new {display:inline;}
+/*等待入住单可以编辑*/
+#hotel_member_order .j_order_edit_waitin {display:inline;}
+
+
+#hotel_member_order .j_order_cancel_new{
+	display:inline;
+}
+
+
+/*管理员的操作*/
+#hotel_admin_order .j_order_confirm_new{
+	
+}
+#hotel_admin_order .j_order_cancel_cancel{
+	display:inline;
+}
+
+
+
+
+/*酒店的操作*/
+#hotel_biz_order .j_order_confirm_new{
+	display:inline;
+}
+#hotel_biz_order .j_order_comein_waitin{
+	display:inline;
+}
+#hotel_biz_order .j_order_comeout_comein{
+	display:inline;
+}

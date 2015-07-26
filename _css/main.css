@@ -1,0 +1,224 @@
+@charset "utf-8";
+@import url(plus.css);
+
+
+/*css reset*/
+html {
+	color: #000;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, code, form, fieldset, legend, input, select, button, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+fieldset, img {
+	border: 0;
+}
+address, caption, cite, code, dfn, em, th, var, optgroup {
+	font-style: inherit;
+	font-weight: inherit;
+}
+del, ins {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+caption, th {
+	text-align: left;
+}
+h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+q:before, q:after {
+	content: '';
+}
+abbr, acronym {
+	border: 0;
+	font-variant: normal;
+}
+sup {
+	vertical-align: baseline;
+}
+sub {
+	vertical-align: baseline;
+}
+/*because legend doesn't inherit in IE */
+legend {
+	color: #000;
+}
+input, button, textarea, select, optgroup, option {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+input {
+	padding:1px 0;
+}
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input, button, textarea, select {
+*font-size: 100%;
+}
+/*end reset*/
+
+
+
+
+
+
+
+
+.gray, .gray a, a.gray{
+	color:gray;
+}
+
+
+.left, .l{text-align:left;}
+.center, .c{text-align:center;}
+.right, .r{text-align:right;}
+.fleft, .fl {
+	display:inline;
+	float:left;
+}
+.fright, .fr {
+	display:inline;
+	float:right;
+}
+.none { display:none; }
+
+body{
+	font-size:arial,宋体,sans-serif;
+}
+
+/*clear*/
+.clear {
+	visibility: hidden;
+	background: #fff;
+	color: #fff;
+	clear: both;
+	margin: 0;
+}
+
+.alarm, a.alarm, alarm.a{
+	color:#f00;
+}
+
+.fault{
+	background:yellow;
+}
+
+.tab1{
+	padding-left:38px;
+	border-bottom:1px solid #fc6;
+	height:29px;
+}
+.tab1 li{
+	display:inline;
+	float:left;
+	padding-top:3px;
+	font-size:14px;
+	height:27px;
+	line-height:27px;
+	width:102px;
+	text-align:center;
+}
+
+.tab1 li.on{
+	background:url(../_images/tab1.png) no-repeat;
+}
+
+.j_tdright1{
+	background:url(../_images/check_right.gif) no-repeat 5px center;
+}
+.j_tdlock1{
+	background:url(../_images/check.gif) no-repeat 7px 12px;
+}
+
+/*tip1*/
+.tip1 {
+	margin:7px 0;
+	padding:7px 5px 5px 30px;
+
+	background:url(../_images/tip.gif) no-repeat 10px 5px #fffee2;
+	border:1px solid #FFCB80;
+}
+.tip1 dt { font-weight:bold; }
+.tip1 dd { padding:4px 0; }
+/*end tip1*/
+
+
+a {text-decoration: none;}
+
+
+/*page*/
+.page {
+	height:20px;
+	padding:15px 0 5px 0;
+}
+.page .current { color:red; }
+.page li { display:inline; }
+.page .count { float:left; }
+.page ul { float:right; }
+.page a { text-decoration:none; }
+.page a:hover { text-decoration:underline; }
+.page em {
+	color:#f00;
+	margin:0 4px;
+}
+.page city { margin:0 4px; }
+
+
+/*over*/
+.over .title a, .over .text a {
+	display:block;
+	width:100%;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+
+.overtd1 a {
+	display:block;
+	width:100%;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+
+.overtd{
+	table-layout : fixed;
+}
+.overtd td{
+
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.overhidden{
+	width:100%;
+	overflow:hidden;
+}
+
+
+/*listoperate 操作链接*/
+.listoperate a{
+	margin-right:5px; 
+}
+
+.nopointer{
+	cursor:normal;
+}
+.vmiddle{
+	vertical-align:middle; 
+}
+
+/*unline 链接不显示下划线*/
+a.unline, table a.unline{
+	text-decoration:none;
+}

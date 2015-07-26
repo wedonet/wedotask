@@ -1,0 +1,192 @@
+td.ico a{
+	display:block;
+	padding-left:20px;
+}
+
+td.ico a.folder{
+	background:url(../../_images/fileicon/folder.gif) no-repeat left center ;
+}
+td.ico a.asp{
+	background:url(../../_images/fileicon/asp.gif) no-repeat left center ;
+}
+
+td.ico a.ace{
+	background:url(../../_images/fileicon/ace.gif) no-repeat left center ;
+}
+td.ico a.app{
+	background:url(../../_images/fileicon/app.gif) no-repeat left center ;
+}
+td.ico a.arj{
+	background:url(../../_images/fileicon/asp.arj) no-repeat left center ;
+}
+td.ico a.av{
+	background:url(../../_images/fileicon/av.gif) no-repeat left center ;
+}
+td.ico a.avi{
+	background:url(../../_images/fileicon/avi.gif) no-repeat left center ;
+}
+td.ico a.bmp{
+	background:url(../../_images/fileicon/bmp.gif) no-repeat left center ;
+}
+td.ico a.cab{
+	background:url(../../_images/fileicon/cab.gif) no-repeat left center ;
+}
+td.ico a.cad{
+	background:url(../../_images/fileicon/cad.gif) no-repeat left center ;
+}
+td.ico a.chm{
+	background:url(../../_images/fileicon/asp.chm) no-repeat left center ;
+}
+td.ico a.com{
+	background:url(../../_images/fileicon/com.gif) no-repeat left center ;
+}
+td.ico a.dll{
+	background:url(../../_images/fileicon/dll.gif) no-repeat left center ;
+}
+td.ico a.dmv{
+	background:url(../../_images/fileicon/dmv.gif) no-repeat left center ;
+}
+td.ico a.doc{
+	background:url(../../_images/fileicon/doc.gif) no-repeat left center ;
+}
+td.ico a.down{
+	background:url(../../_images/fileicon/down.gif) no-repeat left center ;
+}
+td.ico a.exe{
+	background:url(../../_images/fileicon/exe.gif) no-repeat left center ;
+}
+td.ico a.folderback{
+	background:url(../../_images/fileicon/folderback.gif) no-repeat left center ;
+}
+td.ico a.ftp{
+	background:url(../../_images/fileicon/ftp.gif) no-repeat left center ;
+}
+td.ico a.gif{
+	background:url(../../_images/fileicon/gif.gif) no-repeat left center ;
+}
+td.ico a.hlp{
+	background:url(../../_images/fileicon/hlp.gif) no-repeat left center ;
+}
+td.ico a.htm{
+	background:url(../../_images/fileicon/htm.gif) no-repeat left center ;
+}
+td.ico a.html{
+	background:url(../../_images/fileicon/html.gif) no-repeat left center ;
+}
+td.ico a.ico{
+	background:url(../../_images/fileicon/ico.gif) no-repeat left center ;
+}
+td.ico a.img{
+	background:url(../../_images/fileicon/img.gif) no-repeat left center ;
+}
+td.ico a.info{
+	background:url(../../_images/fileicon/info.gif) no-repeat left center ;
+}
+td.ico a.jpg{
+	background:url(../../_images/fileicon/jpg.gif) no-repeat left center ;
+}
+td.ico a.jpeg{
+	background:url(../../_images/fileicon/jpeg.gif) no-repeat left center ;
+}
+td.ico a.js{
+	background:url(../../_images/fileicon/js.gif) no-repeat left center ;
+}
+td.ico a.m3u{
+	background:url(../../_images/fileicon/m3u.gif) no-repeat left center ;
+}
+td.ico a.mdb{
+	background:url(../../_images/fileicon/mdb.gif) no-repeat left center ;
+}
+td.ico a.media{
+	background:url(../../_images/fileicon/media.gif) no-repeat left center ;
+}
+td.ico a.mid{
+	background:url(../../_images/fileicon/mid.gif) no-repeat left center ;
+}
+td.ico a.mov{
+	background:url(../../_images/fileicon/mov.gif) no-repeat left center ;
+}
+td.ico a.move{
+	background:url(../../_images/fileicon/move.gif) no-repeat left center ;
+}
+td.ico a.mp3{
+	background:url(../../_images/fileicon/mp3.gif) no-repeat left center ;
+}
+td.ico a.mp{
+	background:url(../../_images/fileicon/mp.gif) no-repeat left center ;
+}
+td.ico a.mpeg{
+	background:url(../../_images/fileicon/mpeg.gif) no-repeat left center ;
+}
+td.ico a.mpg{
+	background:url(../../_images/fileicon/mpg.gif) no-repeat left center ;
+}
+td.ico a.other{
+	background:url(../../_images/fileicon/other.gif) no-repeat left center ;
+}
+td.ico a.pdf{
+	background:url(../../_images/fileicon/pdf.gif) no-repeat left center ;
+}
+td.ico a.pic{
+	background:url(../../_images/fileicon/pic.gif) no-repeat left center ;
+}
+td.ico a.png{
+	background:url(../../_images/fileicon/png.gif) no-repeat left center ;
+}
+td.ico a.ppt{
+	background:url(../../_images/fileicon/ppt.gif) no-repeat left center ;
+}
+td.ico a.ra{
+	background:url(../../_images/fileicon/ra.gif) no-repeat left center ;
+}
+td.ico a.rar{
+	background:url(../../_images/fileicon/rar.gif) no-repeat left center ;
+}
+td.ico a.real{
+	background:url(../../_images/fileicon/real.gif) no-repeat left center ;
+}
+td.ico a.rm{
+	background:url(../../_images/fileicon/rm.gif) no-repeat left center ;
+}
+td.ico a.sql{
+	background:url(../../_images/fileicon/sql.gif) no-repeat left center ;
+}
+td.ico a.swf{
+	background:url(../../_images/fileicon/swf.gif) no-repeat left center ;
+}
+td.ico a.tar{
+	background:url(../../_images/fileicon/tar.gif) no-repeat left center ;
+}
+td.ico a.torrent{
+	background:url(../../_images/fileicon/torrent.gif) no-repeat left center ;
+}
+td.ico a.txt{
+	background:url(../../_images/fileicon/txt.gif) no-repeat left center ;
+}
+td.ico a.url{
+	background:url(../../_images/fileicon/url.gif) no-repeat left center ;
+}
+td.ico a.wav{
+	background:url(../../_images/fileicon/wav.gif) no-repeat left center ;
+}
+td.ico a.wave{
+	background:url(../../_images/fileicon/wave.gif) no-repeat left center ;
+}
+td.ico a.mpg{
+	background:url(../../_images/fileicon/mpg.gif) no-repeat left center ;
+}
+td.ico a.wmv{
+	background:url(../../_images/fileicon/wmv.gif) no-repeat left center ;
+}
+td.ico a.xls{
+	background:url(../../_images/fileicon/xls.gif) no-repeat left center ;
+}
+td.ico a.xlt{
+	background:url(../../_images/fileicon/xlt.gif) no-repeat left center ;
+}
+td.ico a.xml{
+	background:url(../../_images/fileicon/xml.gif) no-repeat left center ;
+}
+td.ico a.zip{
+	background:url(../../_images/fileicon/zip.gif) no-repeat left center ;
+}

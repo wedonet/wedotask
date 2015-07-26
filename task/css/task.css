@@ -1,0 +1,49 @@
+a.unline
+
+.havetask{
+	padding:0 0 0 20px;
+	background:url(../images/b3.gif) no-repeat;
+}
+
+.limessage{
+	border:1px dashed #bbb;padding:10px;margin:10px 0;
+}
+.limessage_info{
+	border:3px solid green;
+}
+
+/*任务系统的提交按钮*/
+.submit_task{
+	margin:20px 0 0 0; 
+	padding:10px 20px;
+	font-size:14px;
+	font-weight:bold;
+	cursor:pointer;
+}
+/*tasktitle*/
+.tasktitle{
+	margin:10px 0 5px 0;
+	padding:10px 5px;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+}
+
+/*重新紧急的标识*/
+.j_tdright20{
+	background:url(../../_images/check_right.gif) no-repeat 5px center;
+}
+/*子任务的title
+* 用在detail页
+*/
+.titlemyson{
+	margin:20px 0 5px 0;
+	font-size:14px;
+	font-weight:bold;
+	border:1px solid #bbb;
+	border-bottom:none;
+}
+
+/*任务列表*/
+.tasklist td{
+	color:#808080;
+}

@@ -1,0 +1,29 @@
+body{
+	font-size:14px;
+	}
+
+.main { width:500px;
+	margin:0 auto;
+ }
+.msgbox {
+	margin:120px 0px;
+	border:1px solid #c4c1ba;
+}
+.msgbox ul { margin:0px 10px; }
+.msgbox li { margin:7px 0; }
+.msgbox h1 {
+	color:#8a6b0e;
+	background:url(../_images/bgmsgbox.jpg) repeat-x;
+	text-align:center;
+	font-size:14px;
+	height:28px;
+	line-height:28px;
+	border-bottom:1px solid #c4c1ba;
+	margin:0 0 10px 0;
+}
+.back {
+	text-align:center;
+	border-top:1px dashed #c4c1ba;
+	margin:15px 10px 0 10px;
+	padding:5px 0px;
+}
