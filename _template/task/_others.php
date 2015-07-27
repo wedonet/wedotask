@@ -1,4 +1,7 @@
 <?php
+
+/*其它的，取消和删除了的任务*/
+
 require( tpath . 'inc/main.php');
 
 require( tpath . 'task/public/_head.php' );
@@ -10,7 +13,8 @@ require( tpath . 'task/public/_top.php' );
 <div style="margin:-20px 0 30px 0">
 	<div class="fright">
 		<ul>
-			<li> <a href="form.php?act=creat" style="border:1px solid #bbb;background:#eee;padding:5px;font-weight:bold;">添加任务</a></li>
+			<li> <a href="?showcancel=1">取消的任务</a></li>
+			<li> <a href="?showdel=1">删除的任务</a></li>
 		</ul>
 	</div>
 </div>
