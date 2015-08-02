@@ -47,3 +47,8 @@ a.unline
 .tasklist td{
 	color:#808080;
 }
+
+/*点击后设为当前行*/
+.currentline{
+	border:2px solid green;
+}

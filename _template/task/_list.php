@@ -21,7 +21,7 @@ require( tpath . 'task/public/_top.php' );
 <div class="searchbar">
 	<div class="fleft">
 		<form method="get" action="?" id="myform">
-			<input type="hidden" name="keywords" value="<?php echo $j['v']['keywords'] ?>" />
+			<input type="text" name="keywords" value="<?php echo $j['v']['keywords'] ?>" />
 			<input type="hidden" name="outtype" value="view" id="outtype" />
 			<select name="taskstatus" id="taskstatus">
 				<option value="">任务状态</option>

@@ -190,7 +190,7 @@ function loadclass($name, $classname, $mypath = null) {
 
         if (null !== $mypath) {
 
-            $mypath = sysdir . '/_inc/' . $mypath;
+            $mypath = sysdir . '_inc/' . $mypath;
 
             require_once $mypath;
         }

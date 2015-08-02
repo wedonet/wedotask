@@ -64,6 +64,10 @@ class Myclass extends Cls_task {
 
 		$sql = 'select * from `' . sh . '_task` where 1 ';
 
+		if('' !== $keywords){
+			$sql .= ' and title like "%'.$keywords.'%"'; 
+		}
+
 		/* 任务状态 */
 		switch ($taskstatus) {
 			/* 所有活动任务,不包括结束的 */
