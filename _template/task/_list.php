@@ -31,6 +31,7 @@ require( tpath . 'task/public/_top.php' );
 				<option value="redo">返工</option>
 				<option value="done">已完成</option>
 				<option value="over">已结束</option>
+				<option value="cancel">已取消</option>
 			</select>			
 
 			<select name="tasktype" id="tasktype">
@@ -71,14 +72,10 @@ require( tpath . 'task/public/_top.php' );
 				<option value="normal" selected="selected">只显示正常任务</option>
 				<option value="adjust">待调整的任务</option>
 				<option value="discuss">待讨论的任务</option>		
+				
 			</select>				
 			
-			<!--取消的任务-->
-			<select name="taskrange" id="taskrange">
-				<option value="normal" selected="selected">只显示正常任务</option>
-				<option value="adjust">待调整的任务</option>
-				<option value="discuss">待讨论的任务</option>		
-			</select>		
+		
 			
 			&nbsp;
 			<input type="submit" value="submit" onclick="show()"/> &nbsp; &nbsp; &nbsp;

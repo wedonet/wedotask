@@ -116,7 +116,9 @@ class Myclass extends cls_task {
 
 		/* 删除 */
 		if ( $this->icanedittask( $result['suid'] ) ) {
-		   $js .= '$("#j_del").show();'.PHP_EOL;
+			if( 'wedonet' == $this->main->user['u_name'] ){
+				$js .= '$("#j_del").show();'.PHP_EOL;
+			}
 		}
 
 		/*取消 我能编辑 and 还未结束 */
