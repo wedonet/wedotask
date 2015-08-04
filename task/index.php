@@ -41,6 +41,25 @@ class Myclass extends Cls_task {
 
         showerr();
 
+		switch ( $showtype ) {
+			case '':
+				$this->j['crumb'] .= '<li>新任务</li>'.PHP_EOL;
+				break;
+			case 'release':
+				$this->j['crumb'] .= '<li>我发布的任务</li>'.PHP_EOL;
+				break;
+			case 'receive':
+				$this->j['crumb'] .= '<li>我执行的任务</li>'.PHP_EOL;
+				break;
+			case 'check':
+				$this->j['crumb'] .= '<li>我验收的任务</li>'.PHP_EOL;
+				break;
+			case 'noshow':
+				$this->j['crumb'] .= '<li>草稿</li>'.PHP_EOL;
+				break;
+		}
+
+
         /* 没选任务状态,then列出所有进行中的任务 */
         if ('' == $taskstatus) {
             $taskstatus = 'alive';
