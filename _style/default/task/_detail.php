@@ -10,9 +10,10 @@
 		
 	&lt;/div&gt;
 
-	&lt;h4 style="font-size:14px;font-weigh:bold;padding:10px 0;text-align:center;border-bottom:1px solid #333;"&gt;
-		ID:{$id}&amp;nbsp;&amp;nbsp;{$title}{$isshow} (by {$sname} {$stime}) -- &lt;span style="color:#00"&gt;{$mystatusname}&lt;/span&gt;
+	&lt;h4 style="font-size:14px;font-weigh:bold;padding:10px 0;text-align:center;border-bottom:1px solid #333;height:14px;"&gt;
+		&lt;span style="width:90%;overflow:hidden;float:left;white-space:nowrap;text-overflow:ellipsis;"&gt;ID:{$id}&amp;nbsp;&amp;nbsp;{$title}{$isshow} (by {$sname} {$stime}) -- &lt;span style="color:#00"&gt;{$mystatusname}&lt;/span&gt;&lt;/span&gt;
 		&lt;span class="fright"&gt;&lt;a href="formson.php?act=creat&amp;amp;pid={$id}"&gt;[添加子任务]&lt;/a&gt;&lt;/span&gt;
+		&lt;span class="clear"&gt;&lt;/span&gt;
 	&lt;/h4&gt;
 		
 	
