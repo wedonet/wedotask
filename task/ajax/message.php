@@ -56,9 +56,13 @@ class Myclass {
 		/*我测的未完成的任务*/
 		$sql = 'select count(*) from `'.sh.'_task` where 1 ';
 		$sql .= ' and mystatus<>"over" ';
+		$sql .= ' and mystatus<>"cancel" ';
 		$sql .= ' and cuids like "%,' . $this->main->user['id'] . ',%"';
 		$sql .= ' and isdel=0 ';
 		$sql .= ' and isshow=1 ';
+		$sql .= ' and pid=0 ';
+		$sql .= ' and myrange<>"discuss" ';
+		$sql .= ' and myrange<>"adjust" ';
 				
 		$result = $this->main->execount( $sql );
 
