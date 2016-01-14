@@ -1,5 +1,4 @@
 <?php
-
 require( tpath . 'inc/main.php');
 
 require( tpath . 'task/public/_head.php' );
@@ -18,7 +17,7 @@ require( tpath . 'task/public/_top.php' );
 <div>
 	<div class="searchbar fleft">
 		<form method="get" action="?">
-			<input type="hidden" name="keywords" value="<?php echo $j['v']['keywords']?>" />
+			<input type="hidden" name="keywords" value="<?php echo $j['v']['keywords'] ?>" />
 			<select name="taskstatus" id="taskstatus">
 				<option value="">任务状态</option>
 				<option value="alive">活动任务</option>
@@ -44,13 +43,13 @@ require( tpath . 'task/public/_top.php' );
 			</select>
 			&nbsp;
 			计划时间：
-			<input type="text" name="dtime1" id="dtime1" size="10" value="<?php echo $j['v']['dtime1']?>" />
+			<input type="text" name="dtime1" id="dtime1" size="10" value="<?php echo $j['v']['dtime1'] ?>" />
 			至
-			<input type="text" name="dtime2" id="dtime2" size="10" value="<?php echo $j['v']['dtime2']?>" /> 
+			<input type="text" name="dtime2" id="dtime2" size="10" value="<?php echo $j['v']['dtime2'] ?>" /> 
 			<input type="submit" value="submit" />
 		</form>
 	</div>
-	
+
 	<div class="searchbar fright">
 		跳转至：
 		<form method="get" action="detail.php" style="display:inline">
@@ -58,7 +57,7 @@ require( tpath . 'task/public/_top.php' );
 			<input type="submit" value="go" />
 		</form>
 	</div>
-	
+
 	<div class="clear"></div>
 	<table class="table1 j_list tasklist" cellspacing="0">
 		<tr>
@@ -75,33 +74,33 @@ require( tpath . 'task/public/_top.php' );
 			<th width="50">子任务</th>
 			<th width="50">状态</th>
 		</tr>
-		
-		
+
+
 		<?php
-		foreach ($j['list'] as $v){
-			echo '<tr>'.PHP_EOL;
-			echo '<td>'.$v['id'].'</td>'.PHP_EOL;
-			echo '<td>'.PHP_EOL;
-			echo '	<a href="detail.php?id='.$v['id'].'" target="_blank">'.$v['title'].'</a> '.PHP_EOL;
-			echo '	<span class="gray">['.$v['mystatusname'].']</span>'.PHP_EOL;
-			echo '	<span class="j_isshow">'.$v['isshow'].'</span>'.PHP_EOL;
-			echo '	<span class="j_new">'.$v['duids'].'|'.$v['rduids'].'</span>'.PHP_EOL;
-			echo '</td>'.PHP_EOL;
-			echo '<td>'.$v['classname'].'</td>'.PHP_EOL;
+		foreach ($j['list'] as $v) {
+			echo '<tr>' . PHP_EOL;
+			echo '<td>' . $v['id'] . '</td>' . PHP_EOL;
+			echo '<td>' . PHP_EOL;
+			echo '	<a href="detail.php?id=' . $v['id'] . '" target="_blank">' . $v['title'] . '</a> ' . PHP_EOL;
+			echo '	<span class="gray">[' . $v['mystatusname'] . ']</span>' . PHP_EOL;
+			echo '	<span class="j_isshow">' . $v['isshow'] . '</span>' . PHP_EOL;
+			echo '	<span class="j_new">' . $v['duids'] . '|' . $v['rduids'] . '</span>' . PHP_EOL;
+			echo '</td>' . PHP_EOL;
+			echo '<td>' . $v['classname'] . '</td>' . PHP_EOL;
 
-			echo '<td>'.$v['sname'].'<br />'.$v['ptime'].'</td>'.PHP_EOL;
-	
-			echo '<td>'.$v['dname'].'<br />'.$v['dunames'].'</td>'.PHP_EOL;
-			echo '<td>'.$v['cunames'].' <br />'.$v['actualcnames'].' </td>'.PHP_EOL;
+			echo '<td>' . $v['sname'] . '<br />' . $v['ptime'] . '</td>' . PHP_EOL;
 
-			echo '<td class="j_tdright'.$v['zhongyao'].'">&nbsp;</td>'.PHP_EOL;
-			echo '<td class="j_tdright'.$v['jinji'].'">&nbsp;</td>'.PHP_EOL;
-	
-			echo '<td>'.$v['plantime'].' <br />'.$v['actualtime'].' </td>'.PHP_EOL;
-			echo '<td>'.$v['lastuname'].'<br />'.$v['lasttime'].'</td>'.PHP_EOL;
-			echo '<td>'.$v['mysonover'].'/'.$v['myson'].'</td>'.PHP_EOL;
-			echo '<td>'.$v['mystatusname'].'</td>'.PHP_EOL;
-			echo '</tr>'.PHP_EOL;
+			echo '<td>' . $v['dname'] . '<br />' . $v['dunames'] . '</td>' . PHP_EOL;
+			echo '<td>' . $v['cunames'] . ' <br />' . $v['actualcnames'] . ' </td>' . PHP_EOL;
+
+			echo '<td class="j_tdright' . $v['zhongyao'] . '">&nbsp;</td>' . PHP_EOL;
+			echo '<td class="j_tdright' . $v['jinji'] . '">&nbsp;</td>' . PHP_EOL;
+
+			echo '<td>' . $v['plantime'] . ' <br />' . $v['actualtime'] . ' </td>' . PHP_EOL;
+			echo '<td>' . $v['lastuname'] . '<br />' . $v['lasttime'] . '</td>' . PHP_EOL;
+			echo '<td>' . $v['mysonover'] . '/' . $v['myson'] . '</td>' . PHP_EOL;
+			echo '<td>' . $v['mystatusname'] . '</td>' . PHP_EOL;
+			echo '</tr>' . PHP_EOL;
 		}
 		?>
 	</table>
@@ -111,29 +110,37 @@ require( tpath . 'task/public/_top.php' );
 
 <script type="text/javascript">
 <!--
-	$(document).ready(function(){
+	$(document).ready(function() {
 
 		/*草稿显示为 稿*/
-		$(".j_isshow").html(function(index, v){
-			if ( "0" == v)
+		$(".j_isshow").html(function(index, v) {
+			if ("0" == v)
 			{
 				return "(稿)";
 			}
-			else{
+			else {
 				return "";
 			}
-			
+
 		})
-			
+
 
 		$("#dtime1,#dtime2").datepicker();
 
-		formatnew( 'j_new', <?php echo $j['user']['id'] ?>); //我的未读任务，显示新
-		
-					$("#taskstatus").val("<?php echo $j['v']['taskstatus'] ?>");
-					$("#tasktype").val("<?php echo $j['v']['tasktype'] ?>");
-					$("#showtype").val("<?php echo $j['v']['showtype'] ?>");
-					
+		formatnew('j_new', <?php echo $j['user']['id'] ?>); //我的未读任务，显示新
+
+		$("#taskstatus").val("<?php echo $j['v']['taskstatus'] ?>");
+		$("#tasktype").val("<?php echo $j['v']['tasktype'] ?>");
+		$("#showtype").val("<?php echo $j['v']['showtype'] ?>");
+
+
+		/*点击当前行变色*/
+		$('.j_list tr').on('click', function(){
+			$('.currentline').removeClass('currentline');
+			$(this).addClass('currentline');
+			
+		})
+
 
 	})
 //-->
@@ -141,6 +148,6 @@ require( tpath . 'task/public/_top.php' );
 
 
 <?php
-require(tpath.'task/public/_foot.php');
+require(tpath . 'task/public/_foot.php');
 
 

@@ -49,6 +49,9 @@ class Myclass extends Cls_task {
 
 		$outtype = $this->main->request('显示方式', 'outtype', 'get', 'char', 2, 50, '', false); //emport时做导出;
 
+		$showcancel = $this->main->rqid('showcancel');
+		$showdel = $this->main->rqid('showdel');
+
 		showerr();
 
 		/* replace */
@@ -62,91 +65,105 @@ class Myclass extends Cls_task {
 		}
 		$j['v']['taskstatus'] = $taskstatus;
 
+
+
+
 		$sql = 'select * from `' . sh . '_task` where 1 ';
 
-		if('' !== $keywords){
-			$sql .= ' and title like "%'.$keywords.'%"'; 
+		/*显示取消的任务*/
+		if ( 1 == $showcancel ) {
+			$sql .= ' and mystatus="cancel" ';
+			$sql .= ' and isdel=0';
+
+			$GLOBALS['j']['crumb'] .= '<li>取消的任务</li>';
+
 		}
 
-		/* 任务状态 */
-		switch ($taskstatus) {
-			/* 所有活动任务,不包括结束的 */
-			case 'alive':
-				$sql .= ' and mystatus<>"over" and mystatus<>"cancel" ';
-				break;
-			default:
-				$sql .= ' and mystatus="' . $taskstatus . '" ';
-				break;
+		/*删除的任务*/
+		if ( 1 == $showdel ) {
+			$sql .= ' and isdel=1 ';
+			$GLOBALS['j']['crumb'] .= '<li>删除的任务</li>';
 		}
 
-		/* 任务类型 */
-		if ('' != $tasktype) {
-			$sql .= ' and mytype="' . $tasktype . '" ';
-		}
-		$j['v']['tasktype'] = $tasktype;
-
-		/* 显示类型 */
-		if ('' != $showtype And $taskuid > 0) {
-			switch ($showtype) {
-				case 'receive':
-					$sql .= ' and duids like "%,' . $taskuid . ',%"';
-					break;
-				case 'release':
-					$sql .= ' and suid=' . $taskuid;
-					break;
-				case 'check':
-					$sql .= ' and cuids like "%,' . $taskuid . ',%"';
-					break;
-				default :
-					$sql .= ' and (suid=' . $taskuid . '
-						or duids like "%,' . $taskuid . ',%" 
-						or cuids like "%,' . $taskuid . ',%")';
-					break;
-			}
-		}
-
-		$j['v']['showtype'] = $showtype;
-		$j['v']['taskuid'] = $taskuid;
-
-
-		/* 部门 */
-		if ('' !== $dic) {
-			$sql .= ' and dic="' . $dic . '" ';
-		}
-		$j['v']['dic'] = $dic;
-
-		/* 显示范围 */
-		$j['v']['taskrange'] = $taskrange;
-		switch ($taskrange) {
-			case '' :
-			case 'normal': //正常任务
-				$sql .= ' and myrange<>"adjust" and myrange<>"discuss" ';
-				break;
-			case 'adjust':
-				$sql .= ' and myrange="adjust" ';
-				break;
-			case 'discuss':
-				$sql .= ' and myrange="discuss" ';
-				break;
-		}
-
-
-
-
-		$sql .= ' and isshow=1 ';
-
-
-
-		/* 计划时间段 */
-		if ('' != $dtime1) {
-			$sql .= ' and dtimesint>=' . strtotime($dtime1);
-		}
-
-		if ('' != $dtime1) {
-			$sql .= ' and dtimesint<=' . strtotime($dtime2);
-		}
-
-		$sql .= ' and isdel=0 ';
+//		/* 任务状态 */
+//		switch ($taskstatus) {
+//			/* 所有活动任务,不包括结束的 */
+//			case 'alive':
+//				$sql .= ' and mystatus<>"over" and mystatus<>"cancel" ';
+//				break;
+//			default:
+//				$sql .= ' and mystatus="' . $taskstatus . '" ';
+//				break;
+//		}
+//
+//		/* 任务类型 */
+//		if ('' != $tasktype) {
+//			$sql .= ' and mytype="' . $tasktype . '" ';
+//		}
+//		$j['v']['tasktype'] = $tasktype;
+//
+//		/* 显示类型 */
+//		if ('' != $showtype And $taskuid > 0) {
+//			switch ($showtype) {
+//				case 'receive':
+//					$sql .= ' and duids like "%,' . $taskuid . ',%"';
+//					break;
+//				case 'release':
+//					$sql .= ' and suid=' . $taskuid;
+//					break;
+//				case 'check':
+//					$sql .= ' and cuids like "%,' . $taskuid . ',%"';
+//					break;
+//				default :
+//					$sql .= ' and (suid=' . $taskuid . '
+//						or duids like "%,' . $taskuid . ',%" 
+//						or cuids like "%,' . $taskuid . ',%")';
+//					break;
+//			}
+//		}
+//
+//		$j['v']['showtype'] = $showtype;
+//		$j['v']['taskuid'] = $taskuid;
+//
+//
+//		/* 部门 */
+//		if ('' !== $dic) {
+//			$sql .= ' and dic="' . $dic . '" ';
+//		}
+//		$j['v']['dic'] = $dic;
+//
+//		/* 显示范围 */
+//		$j['v']['taskrange'] = $taskrange;
+//		switch ($taskrange) {
+//			case '' :
+//			case 'normal': //正常任务
+//				$sql .= ' and myrange<>"adjust" and myrange<>"discuss" ';
+//				break;
+//			case 'adjust':
+//				$sql .= ' and myrange="adjust" ';
+//				break;
+//			case 'discuss':
+//				$sql .= ' and myrange="discuss" ';
+//				break;
+//		}
+//
+//
+//
+//
+//		$sql .= ' and isshow=1 ';
+//
+//
+//
+//		/* 计划时间段 */
+//		if ('' != $dtime1) {
+//			$sql .= ' and dtimesint>=' . strtotime($dtime1);
+//		}
+//
+//		if ('' != $dtime1) {
+//			$sql .= ' and dtimesint<=' . strtotime($dtime2);
+//		}
+//
+//		$sql .= ' and isdel=0 ';
 		$sql .= ' order by id desc ';
 
 //stop($sql);
@@ -180,7 +197,7 @@ class Myclass extends Cls_task {
 
 		$j['v']['pagelist'] = $this->main->pagelist();
 
-		require( tpath . 'task/_list.php');
+		require( tpath . 'task/_others.php');
 	}
 
 	function getoptiondepartment() {

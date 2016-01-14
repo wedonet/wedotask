@@ -202,10 +202,10 @@ class Cls_main {
       1.title				: 名称
       2.myname			: input name
       3.mytype			: get还是post,或cb(checkbox by post)
-      4.inputtype			: 类型(char = 字符, num=数字, int=int, phone, mail, mobile, date)
+      4.inputtype		: 类型(char = 字符, num=数字, int=int, phone, mail, mobile, date)
       5.mix				: 最小字符,=0时不作限制
       6.max				: 最大字符,=0是不作限制
-      7.myfilter			: folder, invalid, encode, phone, mail, mobile, date
+      7.myfilter		: folder, invalid, encode, phone, mail, mobile, date
      */
     function request($mytitle, $myname, $mytype, $inputtype, $mix = 0, $max = 0, $myfilter = '', $mustfill = true) {
         $s = '';

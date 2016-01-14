@@ -34,3 +34,6 @@ zback/
 *.db
 config.php
 /demo/
+_upload/
+/model/
+/store/

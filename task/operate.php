@@ -198,6 +198,8 @@ class Myclass extends Cls_task {
 
         $this->main->execute($sql);
 
+		$this->log($id, '删除任务');
+
         jsucclose();
     }
 
@@ -324,14 +326,37 @@ class Myclass extends Cls_task {
 	} 
 
 
-	
+	/*处理待调整和待讨论*/
 	function dorange($range, $title)
 	{
 		$id = $this->main->rqid('id');
 
+		/*取消时置为空*/
+		if ( 'undiscuss' == $range OR 'unadjust'==$range ) {
+			$range = '';
+		}
+
 		$sql = 'update `'. sh.'_task` set myrange="'.$range.'",myrangetitle="'.$title.'" where  1 and id ='.$id;
 	
 		$this->main->execute($sql);
+
+		/*日志*/
+		switch ($range) {
+			case 'discuss':
+				$title = '设为待讨论';
+				break;
+			case 'undiscuss':
+				$title = '取消待讨论';
+				break;
+			case 'adjust':
+				$title = '设为待调整';
+				break;
+			case 'unadjust':
+				$title = '取消待调整';
+				break;
+		}
+
+		$this->log($id, $title);
 
 		jsucok();
 	} // end func

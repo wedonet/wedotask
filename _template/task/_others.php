@@ -1,4 +1,7 @@
 <?php
+
+/*其它的，取消和删除了的任务*/
+
 require( tpath . 'inc/main.php');
 
 require( tpath . 'task/public/_head.php' );
@@ -10,7 +13,8 @@ require( tpath . 'task/public/_top.php' );
 <div style="margin:-20px 0 30px 0">
 	<div class="fright">
 		<ul>
-			<li> <a href="form.php?act=creat" style="border:1px solid #bbb;background:#eee;padding:5px;font-weight:bold;">添加任务</a></li>
+			<li> <a href="?showcancel=1">取消的任务</a></li>
+			<li> <a href="?showdel=1">删除的任务</a></li>
 		</ul>
 	</div>
 </div>
@@ -21,7 +25,7 @@ require( tpath . 'task/public/_top.php' );
 <div class="searchbar">
 	<div class="fleft">
 		<form method="get" action="?" id="myform">
-			<input type="text" name="keywords" value="<?php echo $j['v']['keywords'] ?>" />
+			<input type="hidden" name="keywords" value="<?php echo $j['v']['keywords'] ?>" />
 			<input type="hidden" name="outtype" value="view" id="outtype" />
 			<select name="taskstatus" id="taskstatus">
 				<option value="">任务状态</option>
@@ -31,7 +35,6 @@ require( tpath . 'task/public/_top.php' );
 				<option value="redo">返工</option>
 				<option value="done">已完成</option>
 				<option value="over">已结束</option>
-				<option value="cancel">已取消</option>
 			</select>			
 
 			<select name="tasktype" id="tasktype">
@@ -72,10 +75,14 @@ require( tpath . 'task/public/_top.php' );
 				<option value="normal" selected="selected">只显示正常任务</option>
 				<option value="adjust">待调整的任务</option>
 				<option value="discuss">待讨论的任务</option>		
-				
 			</select>				
 			
-		
+			<!--取消的任务-->
+			<select name="taskrange" id="taskrange">
+				<option value="normal" selected="selected">只显示正常任务</option>
+				<option value="adjust">待调整的任务</option>
+				<option value="discuss">待讨论的任务</option>		
+			</select>		
 			
 			&nbsp;
 			<input type="submit" value="submit" onclick="show()"/> &nbsp; &nbsp; &nbsp;
