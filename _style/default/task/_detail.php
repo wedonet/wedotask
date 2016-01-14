@@ -56,6 +56,9 @@
 			&lt;li id="j_done" style="display:none"&gt;&lt;a href="operate.php?act=done&amp;amp;id={$id}" class="j_open"&gt;完成&lt;/a&gt;&lt;/li&gt;
 			&lt;li id="j_redo" style="display:none"&gt;&lt;a href="operate.php?act=redo&amp;amp;id={$id}" class="j_open"&gt;返工&lt;/a&gt;&lt;/li&gt;
 			&lt;li id="j_check" style="display:none"&gt;&lt;a href="operate.php?act=ok&amp;amp;id={$id}" class="j_open"&gt;检测通过&lt;/a&gt;&lt;/li&gt;
+
+			&lt;li id="j_checkall" style="display:none"&gt;&lt;a href="operate.php?act=okall&amp;amp;id={$id}" class="j_open"&gt;强制通过并结贴&lt;/a&gt;&lt;/li&gt;
+
 			&lt;li id="j_cancel" style="display:none"&gt;&lt;a href="operate.php?act=cancel&amp;amp;id={$id}" class="j_open" title="取消 {$title}"&gt;取消&lt;/a&gt;&lt;/li&gt;
 			&lt;li id="j_over" style="display:none"&gt;&lt;a href="?act=over&amp;amp;id={$id}"&gt;结束&lt;/a&gt;&lt;/li&gt;
 			&lt;li id="j_log"&gt;&lt;a href="log.php?id={$id}" target="_blank"&gt;日志&lt;/a&gt;&lt;/li&gt;

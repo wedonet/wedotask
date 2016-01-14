@@ -105,6 +105,12 @@ class Myclass extends cls_task {
 		}
 
 
+		/*管理员可以强制全部检测通过*/
+		if ( '1' == $this->main->user['id'] )  {
+		    $js .= '$("#j_checkall").show();'.PHP_EOL;
+		}
+
+
 		$h = str_replace('{$showdetailoperate}', $this->showdetailoperate($result), $h);
 
 

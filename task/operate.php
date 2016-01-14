@@ -31,6 +31,9 @@ class Myclass extends Cls_task {
             case 'ok':
                 $this->funok();
                 break;
+				case 'okall':
+						$this->funokall();
+						break;
 			case 'cancel':
 				$this->funcancel();
 				break;
@@ -268,6 +271,60 @@ class Myclass extends Cls_task {
 
         jsucok();
     }
+
+	 /*由管理员执行的全部检测通过，并结贴*/
+    function funokall() {
+        $id = $this->main->rqid('id');
+
+        $a_task = $this->gettask($id);
+
+  
+
+        /* 检测任务状态是否允许改为正在执行 */
+        if ('done' !== $a_task['mystatus']) {
+            ajaxerr('已完成的任务才能检测!');
+        }
+
+
+        /* 追加进已验收人 */
+        if ('' == $a_task['actualcuids']) {
+            $a_task['actualcuids'] = ',';
+            $a_task['actualcnames'] = '';
+        }
+
+        $title = $this->main->user['u_fullname'] . '强制完成检测';
+
+		  $rs = [];
+
+      
+            $rs['mystatus'] = "over";
+            $rs['mystatusname'] = "结束";
+
+            $rs['actualtimeint'] = time();
+            $rs['actualtime'] = date('Y-m-d H:i:s', $rs['actualtimeint']);
+
+            $title .= '由管理员通过验证,更新为结束';
+   
+
+
+        try {
+            $this->main->pdo->begintrans();
+
+            $this->main->pdo->update(sh . '_task', $rs, ' id=' . $id);
+
+            /* lgo */
+            $this->log($id, $title);
+
+            $this->main->pdo->submittrans();
+        } catch (PDOException $e) {
+            ajaxerr($e);
+            $this->main->pdo->rollbacktrans();
+        }
+
+
+        jsucok();
+    }
+
 
     /* temp */
 
