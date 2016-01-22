@@ -26,7 +26,6 @@ require( sysdir . '/note/public/_top.php' );
 <div>
 	<div class="searchbar">
 		<form method="get" action="?">
-                        <input type="checkbox" name="taskstatus[]" value="All"> All &nbsp;
 			<input type="checkbox" name="taskstatus[]" value="New"> New &nbsp;
 			<input type="checkbox" name="taskstatus[]" value="Plan"> Plan &nbsp;
 			<input type="checkbox" name="taskstatus[]" value="Doing"> Doing &nbsp;
