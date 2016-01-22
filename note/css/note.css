@@ -1,0 +1,45 @@
+.linote .operate{
+	margin:0 0 15px 0;
+	padding:3px;
+	background:#eee;
+	text-align:right;
+}
+.lireply{
+	margin:2px 0 7px 0;
+	padding:6px;
+	border:1px dashed #bbb;
+
+}
+
+.searchbar{
+	margin:0 0 10px 0;
+	padding:5px;
+	border:1px solid #bbb;
+}
+.searchbar input{
+	vertical-align:middle; 
+}
+
+.linote{
+	position:relative;
+	background:#ddd;
+}
+.linote .title{
+	padding:5px;
+}
+.linote .content{
+	padding:5px;
+}
+.linote .statusNew{
+	position:absolute;
+	width:5px;
+	height:5px;
+	top:3px;
+	right:3px;
+	background:red;
+}
+
+
+.linote.Done, .linote.Done a{
+	color:#6c6c6c;
+}

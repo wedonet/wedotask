@@ -14,7 +14,7 @@ class Myclass extends Cls_task {
 
         define('sp', 'task/_index');		
 		
-		$this->j =& $GLOBALS['j'];
+			$this->j =& $GLOBALS['j'];
 		
         $this->j['crumb'] = '<li>任务管理</li>'.PHP_EOL;
 

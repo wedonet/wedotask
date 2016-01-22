@@ -36,6 +36,7 @@ $config['supperlogin'] = 0; //超管是否需要双重登录
 $config['LoginErr'] =5; //每天允许输入密码错误次数,一旦正确后清零
 
 $config['templatename'] = '_template'; //模板文件夹名称
+$config['apiname'] = 'api';
 
 /*$$$$参数设置
  * 覆盖默认参数
@@ -62,6 +63,7 @@ define('timestamp', $config['timestamp']);
 define( 'tpath', sysdir.$config['templatename'] .'/' );
 define( 'tdir', webdir . $config['templatename']. '/' );
 
+define('apipath', sysdir.$config['apiname']);
 
 /*定义些全局变量*/
 $errmsg = '';

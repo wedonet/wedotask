@@ -232,6 +232,8 @@ class Cls_main {
             case 'cb': //post checkbox
                 if (isset($_POST[$myname])) {
                     $s = $_POST[$myname];
+					 }elseif(isset($_GET[$myname])){
+						  $s = $_GET[$myname];
                 } else {
                     $s = '';
                 }
