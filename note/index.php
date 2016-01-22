@@ -109,7 +109,7 @@ require( sysdir . '/note/public/_top.php' );
 			echo '</div>';
 
 			/*显示回复*/
-			showreply($j['reply'], $v['id']);
+			showreply($j['reply'], $v['id'], $v['mystatus']);
 
 			
 
@@ -154,13 +154,13 @@ require(tpath . 'task/public/_foot.php');
 
 
 
-function showreply(&$a, $fid)
+function showreply(&$a, $fid, $mystatus)
 {
 	$s = '';
 
 	foreach ($a as $v ) {
 		if( $v['fid'] == $fid){
-			echo '<div class="lireply">';
+			echo '<div class="lireply '.$mystatus.'">';
 			echo '	<div class="fleft" style="width:80%">'.$v['sname'].' &nbsp; ';
 			echo			$v['mycontent'];
 			echo '	</div>'.PHP_EOL;	
