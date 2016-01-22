@@ -47,7 +47,13 @@
 		<li style="display:none"><a href="/task/" id="j_object">项目</a></li>
 		<li><a href="/task/" id="j_navtask">任务管理</a></li>
 		<li><a href="/log/" id="j_navlog">更新日志</a></li>
-		<li><a href="/note/" id="j_note">我的便签</a></li>
+		<?php
+		if(!strpos( ',1,63,65,59,67', ','.$j['user']['id'].',')) {
+			echo '<li><a href="/note/" id="j_navnote">我的便签</a></li>';
+		}
+
+		
+		?>
 	</ul>
 	<div class="clear"></div>
 </div>
