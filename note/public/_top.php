@@ -64,7 +64,7 @@ $j =& $GLOBALS['j'];
 
 
 		<?php
-		if(!strpos( ',1,63,65,59,67', ','.$j['user']['id'].',')) {
+		if(!strpos( ',1,63,65,59,67,91', ','.$j['user']['id'].',')) {
 			echo '<li><a href="/note/" id="j_navnote">我的便签</a></li>';
 		}
 
