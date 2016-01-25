@@ -80,8 +80,13 @@ class Myapi extends Cls_note {
 
 
 		/* ====deal */
-		/* 检测责任人是否正确,并返回责任人用户id */
-		$sql = 'select id from `' . sh . '_user` where u_fullname="' . $rs['dname'] . '"';
+		
+		if(preg_match("/^[a-zA-Z\s]+$/",$rs['dname'])) {
+			$sql = 'select id,u_fullname from `' . sh . '_user` where u_nick="' . $rs['dname'] . '"';
+		}else{
+			/* 检测责任人是否正确,并返回责任人用户id */
+			$sql = 'select id,u_fullname from `' . sh . '_user` where u_fullname="' . $rs['dname'] . '"';
+		}
 
 		$result = $this->main->exeone($sql);
 
@@ -89,6 +94,7 @@ class Myapi extends Cls_note {
 			ajaxerr('责任人名称错误');
 		} else {
 			$rs['duid'] = $result['id'];
+			$rs['dname'] = $result['u_fullname'];
 		}
 
 
