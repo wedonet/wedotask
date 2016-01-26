@@ -71,6 +71,8 @@ require( sysdir . '/note/public/_top.php' );
 	
 			echo		$v['stime'];
 
+			echo		' - '.$v['dtime'];
+
 			echo '	&nbsp; 回复('.$v['countreply'].')';
 			
 			echo '	</div>';

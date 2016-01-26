@@ -444,7 +444,15 @@ class Myapi extends Cls_note {
 		$para['id'] = $this->main->rqid('id');
 		$para['mystatus'] = $this->act;
 
-		$sql = 'update `'.sh.'_note` set mystatus=:mystatus where 1 ';
+		$sql = 'update `'.sh.'_note` set mystatus=:mystatus ';
+		if( 'Done'==$this->act ){
+			$thetime = time();
+			$sql .= ' ,dtimeint='.$thetime;
+			$sql .= ' ,dtime="'. date('Y-m-d H:i:s', $thetime).'"';
+		}
+
+
+		$sql .= ' where 1 ';
 		$sql .= ' and id=:id';
 
 		$this->main->pdo->execute($sql,$para);		
