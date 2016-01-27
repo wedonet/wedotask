@@ -34,12 +34,14 @@ require( sysdir . '/note/public/_top.php' );
 			<input type="checkbox" name="taskstatus[]" value="Cancel"> Cancel &nbsp;
 			<input type="checkbox" name="taskstatus[]" value="Over"> Over &nbsp;
 			
+			<input type="text" id="u_fullname" name="u_fullname" value="<?php echo $j['search']['u_fullname'] ?>" size="7" placeholder="姓名" class="vmiddle" />
+		
+			&nbsp;
 
-
-			<select name="showtype" id="showtype">
+			<select name="showtype" id="showtype" class="vmiddle">
 				<option value="">All</option>
-				<option value="release">我发的</option>
-				<option value="receive">我收的</option>
+				<option value="release">发送的</option>
+				<option value="receive">接收的</option>
 			</select>
 
 
