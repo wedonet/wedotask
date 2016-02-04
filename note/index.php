@@ -94,12 +94,12 @@ require( sysdir . '/note/public/_top.php' );
 			/*没删除的都可以显示这些操作*/
 			if(!strpos('delete', $v['mystatus'])) {
 				echo '&nbsp; &nbsp; ';
-				echo ' <a href="form.php?act=Plan&amp;id='.$v['id'].'" onclick="return confirm(\'改为Plan状态\')" class="j_open">Plan</a> &nbsp; ';
-				echo ' <a href="form.php?act=Doing&amp;id='.$v['id'].'" onclick="return confirm(\'改为Doing状态\')" class="j_open">Doing</a> &nbsp; ';
-				echo ' <a href="form.php?act=Done&amp;id='.$v['id'].'" onclick="return confirm(\'改为Done状态\')" class="j_open">Done</a> &nbsp; ';
-				echo ' <a href="form.php?act=Delay&amp;id='.$v['id'].'" onclick="return confirm(\'改为Delay状态\')" class="j_open">Delay</a> &nbsp; ';
-				echo ' <a href="form.php?act=Cancel&amp;id='.$v['id'].'" onclick="return confirm(\'改为Cancel状态\')" class="j_open">Cancel</a> &nbsp; ';
-				echo ' <a href="form.php?act=Over&amp;id='.$v['id'].'" onclick="return confirm(\'改为Over状态\')" class="j_open">Over</a> &nbsp; ';
+				echo ' <a href="form.php?act=Plan&amp;id='.$v['id'].'" title="改为Plan状态" class="j_open">Plan</a> &nbsp; ';
+				echo ' <a href="form.php?act=Doing&amp;id='.$v['id'].'" title="改为Doing状态" class="j_open">Doing</a> &nbsp; ';
+				echo ' <a href="form.php?act=Done&amp;id='.$v['id'].'" title="改为Done状态" class="j_open">Done</a> &nbsp; ';
+				echo ' <a href="form.php?act=Delay&amp;id='.$v['id'].'" title="改为Delay状态" class="j_open">Delay</a> &nbsp; ';
+				echo ' <a href="form.php?act=Cancel&amp;id='.$v['id'].'" title="改为Cancel状态" class="j_open">Cancel</a> &nbsp; ';
+				echo ' <a href="form.php?act=Over&amp;id='.$v['id'].'" title="改为Over状态" class="j_open">Over</a> &nbsp; ';
 			}
 
 			/*作者才可以删除*/
