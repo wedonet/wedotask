@@ -40,6 +40,8 @@
 }
 
 
-.linote.Done, .linote.Done a, .lireply.Done, .lireply.Done a, .linote.Cancel, .linote.Cancel a{
+.linote.Done, .linote.Done a, .lireply.Done, .lireply.Done a,
+.linote.Over, .linote.Over a, .lireply.Over, .lireply.Over a,
+.linote.Cancel, .linote.Cancel a, .lireply.Cancel, .lireply.Cancel a{
 	color:#6c6c6c;
 }
