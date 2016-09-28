@@ -1,0 +1,158 @@
+
+/*liststyle*/
+.liststyle li{
+   display:inline;
+   float:left;
+	padding:7px;
+	margin-right:15px;
+	width:320px;
+	height:200px;
+	line-height:22px;
+	border:1px solid #ddd;
+}
+.liststyle .pre{
+	display:inline;
+	float:left;
+	width:160px;
+}
+.liststyle .preimg{
+	height:160px;
+	overflow:hidden;
+}
+.liststyle .on{
+	background:#ffc;
+}
+.liststyle .info {
+	padding:0 0 0 5px;
+}
+.liststyle .info li{
+	display:block;
+	padding:0;
+	float:none;
+	width:auto;
+	height:28px;
+	line-height:28px;
+	border:0;
+}
+
+
+a.folder{
+	padding-left:22px;
+	background:url(../../_images/fileicon/folder.gif) no-repeat;
+
+}
+
+/*strlist*/
+.strlist .title{
+	font-size:14px;
+	font-weight:bold;
+	color:red;
+}
+.strlist .readme{
+	padding-bottom:6px;
+}
+.strlist .other{
+
+
+}
+
+/*编辑模板的操作提示,标签生成器,选择编辑区链接
+=======================================*/
+.templateselect {
+}
+.templateselect .selectarea {
+	float:right;
+}
+.templateselect .operatereadme {
+	text-align:left;
+	width:200px;
+	float:left;
+}
+.templateselect li {
+	background:url(../images/dot4.gif) no-repeat 0px -5px;
+	list-style:none;
+	display:inline;
+	padding-left:12px;
+	padding-right:10px;
+}
+.gettags li {
+	height:30px;
+}
+.gettags h1 {
+	font-size:12px;
+	display:inline;
+	width:150px;
+	border:0;
+	color:#000000;
+}
+.gettags form {
+	display:inline;
+}
+
+/*选择频道内页面*/
+.selectpage{
+	position:relative;
+	display:inline;
+	float:right;
+	margin-right:30px;
+	padding-right:15px;
+	background:url(../images/bg_1.gif) no-repeat right 2px;
+}
+.selectpage dd{
+	display:none;
+	position:absolute;
+	top:13px;
+	right:0;
+	padding:7px;
+	border:1px solid #bbb;
+	background:#fff;
+}
+.selectpage dd li{
+	display:block;
+	background:none;
+	padding:5px 0;
+	border-bottom:1px dashed #ddd;
+	white-space:nowrap;
+}
+.selectpage dd li a{
+	text-decoration:none;
+}
+/*==============================*/
+/*标签生成器*/
+.showtags {
+	height:20px;
+	font-size:14px;
+	font-weight:bold;
+	color:#ff0000;
+}
+.selectmaketags {
+	border:1px dotted #848284;
+	margin:15px 0 15px 0;
+	padding:5px;
+}
+.selectmaketags li {
+	padding:4px;
+	display:inline;
+	background:url(../images/dot.gif) no-repeat 0 2px;
+}
+.selectmaketags li a {
+	text-decoration:none;
+}
+.maketag {
+}
+.maketag h2 {
+	padding:10px 0 2px 0;
+	font-size:14px;
+	border-bottom:1px solid #ddd;
+	margin:15px 0;
+}
+/*网页列表*/
+.tpchannellist{margin:10px 0;}
+.tpchannellist li{
+	display:inline;
+	float:left;
+	width:128px;
+	height:22px;
+	line-height:22px;
+
+}

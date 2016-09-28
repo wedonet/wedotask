@@ -1,0 +1,4 @@
+/*新定单管理员可以删除*/
+#adminorder .j_del_new{
+	display:inline;
+}
