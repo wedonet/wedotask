@@ -4,31 +4,30 @@ require '../global.php';
 require sysdir . 'task/cls_task.php';
 require sysdir . 'task/main.php';
 
-
-
 class Myclass extends Cls_task {
-	private $j;	
+
+    private $j;
 
     function __construct() {
         parent::__construct();
 
-        define('sp', 'task/_index');		
-		
-			$this->j =& $GLOBALS['j'];
-		
-        $this->j['crumb'] = '<li>任务管理</li>'.PHP_EOL;
+        define('sp', 'task/_index');
+
+        $this->j = & $GLOBALS['j'];
+
+        $this->j['crumb'] = '<li>任务管理</li>' . PHP_EOL;
 
         $this->htmlmain();
 
         san();
     }
 
-	function htmlmain(){
-		$this->j['headtitle'] = '任务';		
+    function htmlmain() {
+        $this->j['headtitle'] = '任务';
 
 
-		$js = '';
-   
+        $js = '';
+
 
         /* 接收参数 */
         $keywords = $this->main->request('关键词', 'keywords', 'get', 'char', 1, 50, '', false);
@@ -41,23 +40,23 @@ class Myclass extends Cls_task {
 
         showerr();
 
-		switch ( $showtype ) {
-			case '':
-				$this->j['crumb'] .= '<li>新任务</li>'.PHP_EOL;
-				break;
-			case 'release':
-				$this->j['crumb'] .= '<li>我发布的任务</li>'.PHP_EOL;
-				break;
-			case 'receive':
-				$this->j['crumb'] .= '<li>我执行的任务</li>'.PHP_EOL;
-				break;
-			case 'check':
-				$this->j['crumb'] .= '<li>我验收的任务</li>'.PHP_EOL;
-				break;
-			case 'noshow':
-				$this->j['crumb'] .= '<li>草稿</li>'.PHP_EOL;
-				break;
-		}
+        switch ($showtype) {
+            case '':
+                $this->j['crumb'] .= '<li>新任务</li>' . PHP_EOL;
+                break;
+            case 'release':
+                $this->j['crumb'] .= '<li>我发布的任务</li>' . PHP_EOL;
+                break;
+            case 'receive':
+                $this->j['crumb'] .= '<li>我执行的任务</li>' . PHP_EOL;
+                break;
+            case 'check':
+                $this->j['crumb'] .= '<li>我验收的任务</li>' . PHP_EOL;
+                break;
+            case 'noshow':
+                $this->j['crumb'] .= '<li>草稿</li>' . PHP_EOL;
+                break;
+        }
 
 
         /* 没选任务状态,then列出所有进行中的任务 */
@@ -68,9 +67,8 @@ class Myclass extends Cls_task {
 
         $sql = 'select * from `' . sh . '_task` where 1 ';
 
-		//$sql .= ' and myrange<>"adjust" and myrange<>"discuss" ';
-
-		//$sql .= 
+        //$sql .= ' and myrange<>"adjust" and myrange<>"discuss" ';
+        //$sql .= 
 
         /* 任务状态 */
         switch ($taskstatus) {
@@ -92,79 +90,77 @@ class Myclass extends Cls_task {
         /* 显示类型 */
 
 
-        
-		switch ($showtype) {
-			/*发的任务*/
-			case 'release':
-				$sql .= ' and suid=' . $this->main->user['id'];
-				break;
-			/*收的任务*/
-			case 'receive':
-				$sql .= ' and duids like "%,' . $this->main->user['id'] . ',%"';
-				break;
-			/*验收的任务*/
-			case 'check': /*我验证收到*/
-			   $sql .= ' and cuids like "%,' . $this->main->user['id'] . ',%"';
-				break;
-			default :
-				$sql .= ' and (suid=' . $this->main->user['id'] . '
+
+        switch ($showtype) {
+            /* 发的任务 */
+            case 'release':
+                $sql .= ' and suid=' . $this->main->user['id'];
+                break;
+            /* 收的任务 */
+            case 'receive':
+                $sql .= ' and duids like "%,' . $this->main->user['id'] . ',%"';
+                break;
+            /* 验收的任务 */
+            case 'check': /* 我验证收到 */
+                $sql .= ' and cuids like "%,' . $this->main->user['id'] . ',%"';
+                break;
+            default :
+                $sql .= ' and (suid=' . $this->main->user['id'] . '
 					or duids like "%,' . $this->main->user['id'] . ',%" 
 					or cuids like "%,' . $this->main->user['id'] . ',%")';
-				break;
+                break;
 
-			/* case 'noshow':
-			  $sql .= ' and isshow=0 ';
-			  break;
-			 * 
-			 */
-		}
-       
+            /* case 'noshow':
+              $sql .= ' and isshow=0 ';
+              break;
+             * 
+             */
+        }
+
         $this->j['v']['showtype'] = $showtype;
 
         if ('noshow' == $showtype) {
-            $sql .= ' and isshow=0 and suid='.$this->main->user['id'];
+            $sql .= ' and isshow=0 and suid=' . $this->main->user['id'];
         } else {
             $sql .= ' and isshow=1 ';
         }
 
 
-		/*计划时间段*/
-		if ( '' != $dtime1 ){
-			$sql .= ' and dtimesint>='.strtotime($dtime1);
-		}
+        /* 计划时间段 */
+        if ('' != $dtime1) {
+            $sql .= ' and dtimesint>=' . strtotime($dtime1);
+        }
 
-		if ( '' != $dtime2 ){
-			$sql .= ' and dtimesint<='.strtotime($dtime2);
-		}
+        if ('' != $dtime2) {
+            $sql .= ' and dtimesint<=' . strtotime($dtime2);
+        }
 
         $sql .= ' and isdel=0 ';
-		$sql .= ' and pid=0 ';
-		
-		$sql .= ' and myrange <> "discuss" ';
-		$sql .= ' and myrange <> "adjust" ';
-		
+        $sql .= ' and pid=0 ';
+
+        $sql .= ' and myrange <> "discuss" ';
+        $sql .= ' and myrange <> "adjust" ';
+
         $sql .= ' order by id desc ';
 
-		$result = $this->main->exers($sql);
+        $result = $this->main->exers($sql);
 
 
-		$this->j['v']['keywords'] = $keywords; 
-		$this->j['v']['dtime1'] = $dtime1; 
-		$this->j['v']['dtime2'] = $dtime2;
-		$this->j['v']['keywords'] = $keywords;
+        $this->j['v']['keywords'] = $keywords;
+        $this->j['v']['dtime1'] = $dtime1;
+        $this->j['v']['dtime2'] = $dtime2;
+        $this->j['v']['keywords'] = $keywords;
 
-		$this->j['list'] = $result['rs'];
-		$this->j['pagelist'] =  $this->main->pagelist();	
-
-
-		
-
-		require( tpath . 'task/_index.php');
-
-		die;
-	}
+        $this->j['list'] = $result['rs'];
+        $this->j['pagelist'] = $this->main->pagelist();
 
 
+
+
+        require( tpath . 'task/_index.php');
+
+        die;
+    }
 
 }
 
