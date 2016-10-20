@@ -3,6 +3,17 @@ require( tpath . 'inc/main.php');
 
 require( tpath . 'task/public/_head.php' );
 require( tpath . 'task/public/_top.php' );
+
+
+function formattime($timeint){
+    if(strlen(''.$timeint )>2){
+        return date('Y-m-d', $timeint);
+    }else{
+        return '-';
+    }    
+}
+
+
 ?>
 
 
@@ -108,7 +119,7 @@ require( tpath . 'task/public/_top.php' );
 		<th>重要</th>
 		<th>紧急</th>
 
-		<th>计划/实际 时间</th>
+		<th>开始时间/计划完成/实际完成</th>
 
 		<th>最后回复</th>
 		<th>状态</th>
@@ -131,7 +142,9 @@ require( tpath . 'task/public/_top.php' );
 		echo '<td class="j_tdright' . $v['zhongyao'] . '">&nbsp;</td>' . PHP_EOL;
 		echo '<td class="j_tdright' . $v['jinji'] . '">&nbsp;</td>' . PHP_EOL;
 
-		echo '<td>' . $v['plantime'] . ' <br />' . $v['actualtime'] . ' </td>' . PHP_EOL;
+		echo '<td>' . formattime($v['dtimesint']) . '<br />' . formattime($v['plantimeint']) . ' <br />' . formattime($v['actualtimeint']) . ' </td>' . PHP_EOL;
+                
+                
 		echo '<td>' . $v['lastuname'] . '<br />' . $v['lasttime'] . '</td>' . PHP_EOL;
 		echo '<td>' . $v['mystatusname'] . '</td>' . PHP_EOL;
 		echo '</tr>' . PHP_EOL;
