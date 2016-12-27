@@ -132,7 +132,7 @@ class Myclass extends cls_task {
         $rs['plantime'] = $this->main->request('计划完成时间', 'plantime', 'post', 'date', 1, 20, '', false);
         $rs['isshow'] = $this->main->rfid('isshow');
 
-        $rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 65535);
+        $rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 262140);
 
         //$rs['mytype'] = $this->main->request('类型', 'mytype', 'post', 'char', 1, 25500, 'invalid');
 

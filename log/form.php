@@ -77,7 +77,7 @@ class Myclass extends Cls_log {
     
 		$rs['importantint'] = $this->main->rfid('importantint');      
 
-        $rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 65535);
+        $rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 262140);
 
     
 

@@ -72,7 +72,7 @@ class Myapi extends Cls_note {
 
 
 
-		$rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 65535);
+		$rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 262140);
 
 		$rs['showtype'] = $this->main->request('类型', 'showtype', 'post', 'int', 0, 1);
 
@@ -149,7 +149,7 @@ class Myapi extends Cls_note {
 		$rs['plantime'] = $this->main->request('计划完成时间', 'plantime', 'post', 'date', 1, 20, '', false);
 		$rs['isshow'] = $this->main->rfid('isshow');
 
-		$rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 65535);
+		$rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 262140);
 
 		$rs['mytype'] = $this->main->request('类型', 'mytype', 'post', 'char', 1, 25500, 'invalid');
 
@@ -410,7 +410,7 @@ class Myapi extends Cls_note {
 	function savereply() {
 		$rs['fid'] = $this->main->rqid('fid');
 
-		$rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 65535);
+		$rs['mycontent'] = $this->main->request('内容', 'mycontent', 'post', 'char', 1, 262140);
 
 		ajaxerr();
 
