@@ -90,10 +90,117 @@ class Myclass extends Cls_task {
 
 
 		/* 开始还没结束的（正在进行的） ==========================================*/
+		$sql = 'select * from `' . sh . '_task` where 1 ';
+
+		$this->j['l'][1]['title'] = '正在进行的任务';
+
+        
+        $sql .= ' and dtimesint>=' . strtotime($dtime1);
+		$sql .= ' and dtimesint<=' . strtotime($dtime2);
+
+		$sql .= ' and mystatus<>"over" ';
+        $sql .= ' and mystatus<>"cancel" ';
+
+
+        $sql .= ' and isdel=0 ';
+        $sql .= ' and pid=0 ';
+
+        $sql .= ' and myrange <> "discuss" ';
+        $sql .= ' and myrange <> "adjust" ';
+
+        //$sql .= ' order by id desc ';
+
+
+        $result = $this->main->execute($sql);
+
+
+  
+        $this->j['v']['dtime1'] = $dtime1;
+        $this->j['v']['dtime2'] = $dtime2;
+
+
+        //$this->j['list'] = $result['rs'];
+	
+		$this->j['l'][1]['list'] = $result['rs'];
 
 
 
-		/*计划开始还没开始的 ========================================== */
+
+
+
+		/* 延期完成的 ==========================================*/
+		$sql = 'select * from `' . sh . '_task` where 1 ';
+
+		$this->j['l'][2]['title'] = '延期任务';
+
+        
+        $sql .= ' and plantimeint>=' . strtotime($dtime1);
+		$sql .= ' and plantimeint<=' . strtotime($dtime2);
+
+		$sql .= ' and mystatus<>"over" ';
+        $sql .= ' and mystatus<>"cancel" ';
+
+
+        $sql .= ' and isdel=0 ';
+        $sql .= ' and pid=0 ';
+
+        $sql .= ' and myrange <> "discuss" ';
+        $sql .= ' and myrange <> "adjust" ';
+
+        //$sql .= ' order by id desc ';
+
+
+        $result = $this->main->execute($sql);
+
+
+  
+        $this->j['v']['dtime1'] = $dtime1;
+        $this->j['v']['dtime2'] = $dtime2;
+
+
+        //$this->j['list'] = $result['rs'];
+	
+		$this->j['l'][2]['list'] = $result['rs'];
+
+
+
+
+
+
+
+		/*还没开始的 ========================================== */
+		$sql = 'select * from `' . sh . '_task` where 1 ';
+
+		$this->j['l'][3]['title'] = '还没开始的(不分时间)';
+
+        
+
+
+		$sql .= ' and mystatus="new" ';
+
+
+
+        $sql .= ' and isdel=0 ';
+        $sql .= ' and pid=0 ';
+
+        $sql .= ' and myrange <> "discuss" ';
+        $sql .= ' and myrange <> "adjust" ';
+
+        //$sql .= ' order by id desc ';
+
+
+        $result = $this->main->execute($sql);
+
+
+  
+        $this->j['v']['dtime1'] = $dtime1;
+        $this->j['v']['dtime2'] = $dtime2;
+
+
+        //$this->j['list'] = $result['rs'];
+	
+		$this->j['l'][3]['list'] = $result['rs'];
+
 
 
 
