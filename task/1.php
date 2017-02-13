@@ -92,14 +92,14 @@ class Myclass extends Cls_task {
 		/* 开始还没结束的（正在进行的） ==========================================*/
 		$sql = 'select * from `' . sh . '_task` where 1 ';
 
-		$this->j['l'][1]['title'] = '正在进行的任务';
+		$this->j['l'][1]['title'] = '正在进行的任务(不分时间)';
 
         
-        $sql .= ' and dtimesint>=' . strtotime($dtime1);
-		$sql .= ' and dtimesint<=' . strtotime($dtime2);
+        //$sql .= ' and dtimesint>=' . strtotime($dtime1);
+		//$sql .= ' and dtimesint<=' . strtotime($dtime2);
 
-		$sql .= ' and mystatus<>"over" ';
-        $sql .= ' and mystatus<>"cancel" ';
+		$sql .= ' and mystatus="doing" ';
+        //$sql .= ' and mystatus<>"cancel" ';
 
 
         $sql .= ' and isdel=0 ';
