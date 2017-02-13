@@ -45,13 +45,14 @@ class Myclass extends Cls_task {
 		}
 
 
-
+        $this->j['v']['dtime1'] = $dtime1;
+        $this->j['v']['dtime2'] = $dtime2;
 
        
 
 
         /* 时间 */
-		/* 已经开始并且结束的 ==========================================*/
+		/* 已经开始并且结束的 1 ==========================================*/
 
 		$sql = 'select * from `' . sh . '_task` where 1 ';
 
@@ -76,20 +77,28 @@ class Myclass extends Cls_task {
 
 
   
-        $this->j['v']['dtime1'] = $dtime1;
-        $this->j['v']['dtime2'] = $dtime2;
+
 
 
         //$this->j['list'] = $result['rs'];
+
+
+       if(count($result['rs'])>0){
+
+			for($i=0;$i<count($result['rs']);$i++){
+				$result['rs'][$i]['mysonlist'] = $this->getmyson($result['rs'][$i]['id']);
+			}
+		}	
 	
 		$this->j['l'][0]['list'] = $result['rs'];
+
 		
-		/* /已经开始并且结束的 ==========================================*/
 
 
 
 
-		/* 开始还没结束的（正在进行的） ==========================================*/
+
+		/* 开始还没结束的（正在进行的） 2 ==========================================*/
 		$sql = 'select * from `' . sh . '_task` where 1 ';
 
 		$this->j['l'][1]['title'] = '正在进行的任务(不分时间)';
@@ -115,11 +124,14 @@ class Myclass extends Cls_task {
 
 
   
-        $this->j['v']['dtime1'] = $dtime1;
-        $this->j['v']['dtime2'] = $dtime2;
 
 
-        //$this->j['list'] = $result['rs'];
+        if(count($result['rs'])>0){
+
+			for($i=0;$i<count($result['rs']);$i++){
+				$result['rs'][$i]['mysonlist'] = $this->getmyson($result['rs'][$i]['id']);
+			}
+		}
 	
 		$this->j['l'][1]['list'] = $result['rs'];
 
@@ -128,7 +140,7 @@ class Myclass extends Cls_task {
 
 
 
-		/* 延期完成的 ==========================================*/
+		/* 延期完成的 3 ==========================================*/
 		$sql = 'select * from `' . sh . '_task` where 1 ';
 
 		$this->j['l'][2]['title'] = '延期任务';
@@ -153,10 +165,13 @@ class Myclass extends Cls_task {
         $result = $this->main->execute($sql);
 
 
-  
-        $this->j['v']['dtime1'] = $dtime1;
-        $this->j['v']['dtime2'] = $dtime2;
 
+		if(count($result['rs'])>0){
+
+			for($i=0;$i<count($result['rs']);$i++){
+				$result['rs'][$i]['mysonlist'] = $this->getmyson($result['rs'][$i]['id']);
+			}
+		}
 
         //$this->j['list'] = $result['rs'];
 	
@@ -168,7 +183,7 @@ class Myclass extends Cls_task {
 
 
 
-		/*还没开始的 ========================================== */
+		/*还没开始的 4 ========================================== */
 		$sql = 'select * from `' . sh . '_task` where 1 ';
 
 		$this->j['l'][3]['title'] = '还没开始的(不分时间)';
@@ -193,10 +208,14 @@ class Myclass extends Cls_task {
 
 
   
-        $this->j['v']['dtime1'] = $dtime1;
-        $this->j['v']['dtime2'] = $dtime2;
+ 
 
+       if(count($result['rs'])>0){
 
+			for($i=0;$i<count($result['rs']);$i++){
+				$result['rs'][$i]['mysonlist'] = $this->getmyson($result['rs'][$i]['id']);
+			}
+		}
         //$this->j['list'] = $result['rs'];
 	
 		$this->j['l'][3]['list'] = $result['rs'];
@@ -208,6 +227,25 @@ class Myclass extends Cls_task {
 
         die;
     }
+
+
+	
+	
+	function getmyson($id)
+	{
+		$list = '';
+		
+		$sql = 'select * from `'.sh.'_retask` where taskid='.$id;
+
+		$result = $this->main->execute($sql);
+
+		foreach($result['rs'] as $v){
+		
+			$list .= $v['title'] . ' ('.$v['sname']. '--' .$v['stime']. ')'. '<br />'.PHP_EOL;
+		}
+
+		return $list;
+	} 
 
 }
 

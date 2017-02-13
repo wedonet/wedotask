@@ -4,7 +4,7 @@ require( tpath . 'inc/main.php');
 require( tpath . 'task/public/_head.php' );
 
 
-
+//print_r($this->j);die;
 
 function formattime($timeint){
     if(strlen(''.$timeint )>2){
@@ -43,7 +43,7 @@ function formattime($timeint){
 
 
 	
-    <table class="table1 j_list tasklist" cellspacing="0">
+    <table class="" cellspacing="0" border="1" style="text-align:left">
 
 		<?php
 		
@@ -51,28 +51,30 @@ function formattime($timeint){
 		
 		 ?>
 		<tr>
-			<th colspan="17"><?php echo $w['title'] ?></th>
+			<th colspan="18" style="height:28px;background:#bbb;font-weight:bold;"><?php echo $w['title'] ?></th>
 		</tr>
-        <tr>
-            <th>ID</th>
-			<th>类型</th>
-            <th>任务</th>
+        <tr style="height:28px;background:#eee;">
+            <th style="width:30px">ID</th>
+			<th style="width:50px">类型</th>
+            <th style="width:300px">任务</th>
 
-            <th>发布人</th>
+			<th style="width:300px">回复</th>
 
-			<th>执行部门</th>
-            <th>执行人</th>
-            <th>验收人</th>
-			<th>已验收</th>
-            <th>重</th>
-            <th>急</th>
-			<th>发布时间</th>
-            <th>开始时间</th>
-			<th>计划完成</th>
-			<th>实际完成</th>
-            <th>最后回复</th>
-            <th>子任务</th>
-            <th>状态</th>
+            <th style="width:50px">发布人</th>
+
+			<th style="width:40px">执行部门</th>
+            <th style="width:50px">执行人</th>
+            <th style="width:50px">验收人</th>
+			<th style="width:50px">已验收</th>
+            <th style="width:30px">重</th>
+            <th style="width:30px">急</th>
+			<th style="width:100px">发布时间</th>
+            <th style="width:100px">开始时间</th>
+			<th style="width:120px">计划完成</th>
+			<th style="width:120px">实际完成</th>
+            <th style="width:50px">最后回复</th>
+            <th style="width:50px">子任务</th>
+            <th style="width:50px">状态</th>
         </tr>
 
 
@@ -87,6 +89,9 @@ function formattime($timeint){
             //echo '	<span class="j_isshow">' . $v['isshow'] . '</span>' . PHP_EOL;
             //echo '	<span class="j_new">' . $v['duids'] . '|' . $v['rduids'] . '</span>' . PHP_EOL;
             echo '</td>' . PHP_EOL;
+
+
+			echo '<td>'.$v['mysonlist'].'</td>' . PHP_EOL;
 
             echo '<td>' . $v['sname'] . '</td>' . PHP_EOL;
 
@@ -110,9 +115,14 @@ function formattime($timeint){
             echo '<td>' . formattime($v['dtimesint']) . '</td>' .PHP_EOL;
 			echo '<td>' . formattime($v['plantimeint']) . ' </td />' . PHP_EOL;
 			echo '<td>' . formattime($v['actualtimeint']) . ' </td>' . PHP_EOL;
-            echo '<td>' . $v['lastuname'] . '<br />' . $v['lasttime'] . '</td>' . PHP_EOL;
+
+
+            echo '<td>' . $v['lastuname'] . '-' . $v['lasttime'] . '</td>' . PHP_EOL;
+
+
             echo '<td>' . $v['mysonover'] . '/' . $v['myson'] . '</td>' . PHP_EOL;
-            echo '<td>' . $v['mystatusname'] . '</td>' . PHP_EOL;
+
+            echo '<td>' . $v['mystatusname'] . '</td>' . PHP_EOL; //状态
             echo '</tr>' . PHP_EOL;
         }
 
