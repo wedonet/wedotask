@@ -60,7 +60,7 @@ class Myclass extends Cls_task {
 
         
         $sql .= ' and actualtimeint>=' . strtotime($dtime1);
-		$sql .= ' and actualtimeint<=' . strtotime($dtime2);
+		$sql .= ' and actualtimeint<=' . (strtotime($dtime2)+ 86400);
        
 
 
@@ -147,7 +147,7 @@ class Myclass extends Cls_task {
 
         
         $sql .= ' and plantimeint>=' . strtotime($dtime1);
-		$sql .= ' and plantimeint<=' . strtotime($dtime2);
+		$sql .= ' and plantimeint<=' . (strtotime($dtime2)+ 86400);
 
 		$sql .= ' and mystatus<>"over" ';
         $sql .= ' and mystatus<>"cancel" ';
@@ -241,7 +241,7 @@ class Myclass extends Cls_task {
 
 		foreach($result['rs'] as $v){
 		
-			$list .= $v['title'] . ' ('.$v['sname']. '--' .$v['stime']. ')'. '<br />'.PHP_EOL;
+			$list .= $v['mycontent'] . ' ('.$v['sname']. '--' .$v['stime']. ')'. '<br />'.PHP_EOL;
 		}
 
 		return $list;
