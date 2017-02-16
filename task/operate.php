@@ -53,6 +53,11 @@ class Myclass extends Cls_task {
 			case 'unadjust':
 				$this->dorange('unadjust', '');
 				break;
+
+
+			case 'doplantime':
+				$this->doplantime();
+			    break;
         }
 
         san();
@@ -117,7 +122,14 @@ class Myclass extends Cls_task {
 
 		/*检测是否填写了计划完成时间*/
 		if( strlen($a_task['plantimeint'].'')<1 ){
-			ajaxerr('请先填写计划完成时间');
+
+			$form  = '<form style="display:inline;" id="doform" method="post" action="operate.php?act=doplantime&id='.$id.'">';
+			$form .= '<input type="text" name="plantime" id="doplantime" value="" /> &nbsp; ';
+			$form .= '<input type="submit" value="Submit" onclick="j_repost(\'doform\')" />';
+			$form .= '</form>';
+			$form .= '<script type="text/javascript"><!--	$("#doplantime").datepicker();	//--></script>';
+
+			ajaxerr('<li>请先填写计划完成时间</li><li>'.$form.'</li>');
 		}
 
 
@@ -140,6 +152,56 @@ class Myclass extends Cls_task {
 
         jsucok();
     }
+
+
+	function doplantime() {
+        $id = $this->main->rqid();
+		$plantime = $this->main->request('计划完成时间', 'plantime', 'post', 'date', 1, 20, '', true);
+
+		ajaxerr();
+
+
+
+
+        $a_task = $this->gettask($id);
+
+        /* 检测是不是我自已的任务 */
+        if (!$this->main->ins($a_task['duids'], $this->main->user['id'])) {
+            ajaxerr('您不是任务执行人');
+        }
+
+        /* 检测任务状态是否允许改为正在执行 */
+        if ('new' !== $a_task['mystatus']) {
+            ajaxerr('新任务才能执行');
+        }
+
+        /* 检测草稿不允许执行 */
+        if ('1' !== $a_task['isshow']) {
+            ajaxerr('草稿不能执行');
+        }
+
+
+
+		/*更新计划完成时间*/
+        $rs['plantimeint'] = strtotime($plantime);
+		$rs['plantime'] = $plantime;
+
+
+
+
+        $this->main->pdo->update(sh . '_task', $rs, ' id=' . $id);
+
+
+
+        /* lgo */
+        $title = $this->main->user['u_fullname'] . '设置计划完成时间';
+        $this->log($id, $title);
+
+        $this->fundoing();
+    }
+
+
+
 
     function fundone() {
         $id = $this->main->rqid();
