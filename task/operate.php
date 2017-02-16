@@ -115,6 +115,11 @@ class Myclass extends Cls_task {
             ajaxerr('草稿不能执行');
         }
 
+		/*检测是否填写了计划完成时间*/
+		if( strlen($a_task['plantimeint'].'')<1 ){
+			ajaxerr('请先填写计划完成时间');
+		}
+
 
 
         /* 更新任务状态 */
