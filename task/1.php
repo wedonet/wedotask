@@ -146,8 +146,8 @@ class Myclass extends Cls_task {
 		$this->j['l'][2]['title'] = '延期任务';
 
         
-        $sql .= ' and plantimeint>=' . strtotime($dtime1);
-		$sql .= ' and plantimeint<=' . (strtotime($dtime2)+ 86400);
+        //$sql .= ' and plantimeint>=' . strtotime($dtime1);
+		$sql .= ' and plantimeint<' . (strtotime($dtime2));
 
 		$sql .= ' and mystatus<>"over" ';
         $sql .= ' and mystatus<>"cancel" ';
