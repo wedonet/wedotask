@@ -51,10 +51,11 @@ function formattime($timeint){
 		
 		 ?>
 		<tr>
-			<th colspan="18" style="height:28px;background:#bbb;font-weight:bold;"><?php echo $w['title'] ?></th>
+			<th colspan="19" style="height:28px;background:#bbb;font-weight:bold;"><?php echo $w['title'] ?></th>
 		</tr>
         <tr style="height:28px;background:#eee;">
             <th style="width:30px">ID</th>
+			<th style="width:120px">项目</th>
 			<th style="width:50px">类型</th>
             <th style="width:300px">任务</th>
 
@@ -82,6 +83,7 @@ function formattime($timeint){
         foreach ($w['list'] as $v) {
             echo '<tr>' . PHP_EOL;
             echo '<td>' . $v['id'] . '</td>' . PHP_EOL;
+			echo '<td>'.$v['projecttitle'].'</td>' . PHP_EOL;
 			echo '<td>'.$v['classname'].'</td>' . PHP_EOL;
             echo '<td>' . PHP_EOL;
             echo  $v['title'] . PHP_EOL;

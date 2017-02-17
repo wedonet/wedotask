@@ -15,6 +15,14 @@
 		&lt;/tr&gt;
 
 		&lt;tr&gt;
+			&lt;td&gt;项目：&lt;/td&gt;
+			&lt;td&gt;&lt;select name="projectid" id="projectid"&gt;
+				&lt;option value=""&gt;&lt;/option&gt;
+				{$optionproject}
+			&lt;/select&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+
+		&lt;tr&gt;
 			&lt;td&gt;分类：&lt;/td&gt;
 			&lt;td&gt;&lt;select name="classid" id="classid"&gt;
 				&lt;option value=""&gt;&lt;/option&gt;
@@ -107,6 +115,8 @@
 		$("#classid").val("{$classid}");
 		$("#dic").val("{$dic}");
 		$("#mytype").val("{$mytype}");
+
+		$("#projectid").val("{$projectid}");
 
 		checkcheckbox("duids[]", "{$duids}");
 		checkcheckbox("cuids[]", "{$cuids}");

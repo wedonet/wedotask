@@ -71,7 +71,7 @@ class Myclass extends cls_task {
         $h = str_replace('{$optionclass}', $this->html->getoptionclassbychannel( $a_channel['id'] ), $h);
         $h = str_replace('{$classid}', $classid, $h);
 
-		
+		$h = str_replace('{$optionproject}', $this->getoptionproject(), $h);
 		
 
 
@@ -147,8 +147,16 @@ class Myclass extends cls_task {
 
         $rs['mytype'] = $this->main->request('类型', 'mytype', 'post', 'char', 1, 25500, 'invalid');
 
+		$rs['projectid'] = $this->main->rfid('projectid');
+
         ajaxerr();
 
+
+		if($rs['projectid']<1){
+			ajaxerr('请选择项目');
+		}else{
+			$rs['projecttitle'] = $this->getprojecttitle( $rs['projectid'] );
+		}
 
         /* ====deal */
         if ($rs['classid'] > 0) {
@@ -402,6 +410,43 @@ class Myclass extends cls_task {
 		return $a;	
 	} 
 	
+
+	
+	
+	function getoptionproject()
+	{
+		$tli = '<option value="{$id}" /> {$title}</option>' . PHP_EOL;
+
+
+		$sql = 'select * from `' . sh . '_project` where 1 ';
+		$sql .= ' and mystatus<>"Done" ';
+		$sql .= ' order by id asc ';
+		
+
+		$li = $this->main->repm($sql, $tli);
+		
+        return $li;
+	} 
+
+
+	
+	
+	function getprojecttitle($projectid)
+	{
+		$sql = 'select title from `' . sh . '_project` where 1 ';
+		$sql .= ' and id='.$projectid;
+
+
+		$a = $this->main->exeone($sql);
+
+		if ( false !== $a ) {
+			return( $a['title'] );
+		}
+		else{
+			return('');
+		}
+
+	} 
 	
 }
 
