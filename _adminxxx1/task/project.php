@@ -85,7 +85,7 @@ class Myclass extends Cls_ad {
 		} else {
 			crumb('新建项目');
 
-			$h = str_replace('{$mystatus}', 'New');
+			$h = str_replace('{$mystatus}', 'New', $h);
 
 			$h = str_replace('{$action}', '?act=nsave', $h);
 
